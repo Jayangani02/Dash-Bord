@@ -183,7 +183,7 @@ export default function App() {
         {layout === "vr" && <Configurator />}
         <Routes>
           {getRoutes(routes)}
-         <Route path="*" element={<Navigate to="/dashboards/analytics" />} />
+         <Route path="/" element={<Navigate to="/authentication/sign-up/cover" replace />} />
 
 
           </Routes>
@@ -213,7 +213,7 @@ export default function App() {
       {layout === "vr" && <Configurator />}
       <Routes>
         {getRoutes(routes)}
-        <Route path="*" element={<Navigate to="/" />} />
+        <Route path="*" element={<Navigate to="/authentication/sign-up/cover" replace  />} />
       </Routes>
     </ThemeProvider>
   );

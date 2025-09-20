@@ -14,7 +14,8 @@ Coded by www.creative-tim.com
 */
 
 // react-router-dom components
-import { Link } from "react-router-dom";
+//import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom"; 
 
 // @mui material components
 import Card from "@mui/material/Card";
@@ -33,6 +34,18 @@ import CoverLayout from "layouts/authentication/components/CoverLayout";
 import bgImage from "assets/images/bg-sign-up-cover.jpeg";
 
 function Cover() {
+  const navigate = useNavigate();   // <-- hook for navigation
+
+  // handle signup
+  const handleSignUp = (e) => {
+    e.preventDefault();
+    // TODO: here you can add your signup logic (API call, validation, etc.)
+    
+    // after success, redirect to dashboard
+    navigate("/dashboards/analytics");   // or "/dashboards/sales"
+  };
+
+
   return (
     <CoverLayout image={bgImage}>
       <Card>
